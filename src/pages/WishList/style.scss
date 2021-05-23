@@ -1,0 +1,157 @@
+@import '../../scss/mixin.scss';
+@import '../../scss/variant.scss';
+
+.wish-list {
+  display       : flex;
+  flex-direction: column;
+
+  .header {
+    margin        : 1rem auto;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+
+    .icon {
+      font-size       : 48px;
+      width           : 100px;
+      height          : 100px;
+      border-radius   : 50px;
+      background-color: var(--panda-third-color);
+      display         : flex;
+      align-items     : center;
+      justify-content : center;
+    }
+
+    .title {
+      font-size: 35px;
+    }
+  }
+
+  .wishlists {
+    max-width     : 700px;
+    display       : flex;
+    flex-direction: column;
+    margin        : 1rem auto;
+
+    .wishlist-item {
+      margin: 1rem;
+
+      .title {
+        display         : flex;
+        align-items     : center;
+        height          : 66px;
+        border-radius   : 6px;
+        border          : 1px solid #d9d6d6;
+        font-size       : 20px;
+        padding         : 1rem;
+        position        : relative;
+        background-color: white;
+        z-index         : 2;
+
+        .product {
+          flex: 1;
+
+          input {
+            min-width: 400px;
+            font-size: 24px;
+            border   : none;
+            width    : 100%;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+
+      .categories {
+        background-color: var(--panda-third-color);
+        border-radius   : 6px;
+        border          : 1px solid #d9d6d6;
+        padding         : 1rem;
+        margin-top      : -1rem;
+        z-index         : -1;
+
+        .category {
+          display    : flex;
+          align-items: center;
+          padding    : 1rem;
+
+          .optional {
+            color        : #05DF81;
+            width        : 24px;
+            height       : 24px;
+            border       : 1px solid #999;
+            margin       : 1rem;
+            border-radius: 50%;
+            font-size    : 24px;
+            box-sizing   : content-box;
+          }
+
+          .photo {
+            width : 124px;
+            height: 105px;
+            @include backgroundImage(contain);
+            border       : 1px solid #d9d6d6;
+            border-radius: 6px;
+            padding      : 1rem;
+          }
+
+          .details {
+            padding: 1rem;
+            flex   : 1;
+            cursor: pointer;
+            .category-name {
+              font-size: 21px;
+            }
+
+            .description {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .action {
+    margin: 1rem auto;
+  }
+
+  @include mobile {
+    .MuiButton-label {
+      font-size: 14px;
+    }
+
+    .header {
+      height: 208px;
+
+    }
+
+    .wishlists {
+      .title {
+        font-size: 18px;
+      }
+
+      .wishlist-item {
+        .categories {
+          .category {
+            flex-direction: column;
+
+            .details {
+
+              .category-name {
+                font-size: 18px;
+              }
+
+              .description {
+                font-size  : 17px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

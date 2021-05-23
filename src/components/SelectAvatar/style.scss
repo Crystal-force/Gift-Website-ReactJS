@@ -1,0 +1,17 @@
+@import '../../scss/variant.scss';
+
+.select-avatar {
+
+  .row {
+    display: flex;
+
+    .items {
+      cursor: pointer;
+      width : 100px;
+      height: 100px;
+      margin: 1rem;
+      border: 1px solid #d9d6d6;
+      @include backgroundImage(contain);
+    }
+  }
+}

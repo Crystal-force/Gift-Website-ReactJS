@@ -1,0 +1,57 @@
+@import '../../scss/variant.scss';
+@import '../../scss/mixin.scss';
+
+.header-menu {
+  display    : flex;
+  align-items: center;
+  padding    : 1rem;
+
+  .menus {
+    flex           : 1;
+    display        : flex;
+    justify-content: flex-end;
+
+    ul {
+      display        : flex;
+      justify-content: flex-end;
+      list-style     : none;
+
+      li {
+        font-weight : 300;
+        color       : white;
+        cursor      : pointer;
+        margin-right: 1rem;
+        @extend %font-poppins;
+        font-size: 16px;
+
+        &:hover {
+          color: var(--panda-primary-main);
+        }
+      }
+
+      @include mobile {
+        display: none;
+
+        ul {
+          display: none;
+        }
+      }
+    }
+
+    .user-info {
+      display    : flex;
+      align-items: center;
+
+      .user-name {
+        color: white;
+      }
+    }
+
+    @include mobile {
+      ul {
+        display: none;
+      }
+    }
+
+  }
+}

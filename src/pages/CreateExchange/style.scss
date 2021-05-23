@@ -1,0 +1,221 @@
+@import '../../scss/mixin.scss';
+@import '../../scss/variant.scss';
+
+.create-exchange {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+
+  .title {
+    font-size: 35px;
+  }
+
+  .sub-title {
+    font-size: 20px;
+  }
+
+  .user-info,
+  .exchange-info,
+  .edit-friends {
+    text-align     : center;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    margin         : 0 auto;
+
+    .edit-info {
+      padding  : 1rem;
+      max-width: 700px;
+    }
+  }
+
+  .user-info {
+    .edit-info {
+      &>div {
+        margin: 1rem;
+      }
+    }
+
+    @include mobile {
+      width: calc(100vw - 2rem);
+
+      .edit-info {
+        &>div {
+          width: calc(100vw - 4rem);
+        }
+      }
+    }
+  }
+
+  .exchange-info {
+    .edit-info {
+      &>div {
+        margin: 1rem;
+      }
+
+      .labeled-select {
+        position: relative;
+
+        &::before {
+          content  : 'Tipo';
+          font-size: 12px;
+          @extend %font-poppins;
+          position: absolute;
+          top     : -5px;
+          left    : 1rem;
+          color   : #9A9898;
+        }
+      }
+
+      .gift-types {
+
+        .title {
+          font-size    : 20px;
+          text-align   : left;
+          margin-bottom: 1rem;
+        }
+
+        .types {
+          display: flex;
+
+          .checkboxes {
+            flex   : 1;
+            display: table;
+
+            .row {
+              display: table-row;
+
+              &>label {
+                display   : table-cell;
+                text-align: left;
+              }
+
+              .MuiFormControlLabel-label {
+                font-size: 20px;
+              }
+
+              @include mobile {
+                display: grid;
+              }
+            }
+          }
+
+          .add-action {
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            color          : var(--panda-primary-main);
+          }
+        }
+      }
+
+      .write-gift-type {
+        .actions {
+          display        : flex;
+          padding-left   : 1rem;
+          justify-content: flex-end;
+          width          : 300px;
+        }
+      }
+
+      .row {
+        display: flex;
+
+        &.actions {
+          justify-content: center;
+
+          button+button {
+            margin-left: 1rem;
+          }
+
+        }
+      }
+    }
+  }
+
+  .edit-friends {
+
+    .title,
+    .sub-title {
+      margin: 1rem;
+    }
+
+    .edit-info {
+      min-width: 600px;
+
+
+      .user-list-item {
+        display         : flex;
+        height          : 80px;
+        align-items     : center;
+        background-color: #F6FAFD;
+        border-radius   : 6px;
+        border          : 1px solid #D9D6D6;
+        width           : 100%;
+        margin          : 1rem;
+        padding         : 1rem;
+
+        .name {
+          flex      : 1;
+          padding   : 1rem;
+          text-align: start;
+          @extend %font-poppins;
+          font-size: 20px;
+
+          span {
+            color: var(--panda-primary-main);
+          }
+          .placeholder{
+            color: #9A9898;
+          }
+        }
+
+        .action {
+          display: flex;
+          margin : 1rem;
+        }
+      }
+
+      @include mobile {
+        min-width: auto;
+
+        .user-list-item {
+          width: auto;
+
+          .name {
+            font-size: 17px;
+          }
+        }
+
+        .MuiFormControlLabel-label {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    width : calc(100vw - 2rem);
+    margin: 0 auto;
+
+    .title {
+      font-size: 24px;
+      width    : calc(100vw - 4rem);
+    }
+
+    .sub-title {
+      font-size : 16px;
+      margin-top: 1rem;
+      width     : calc(100vw - 4rem);
+    }
+
+    .edit-info {
+      width          : calc(100vw - 2rem);
+      margin         : 0 auto;
+      padding        : 0 !important;
+      justify-content: center;
+      align-items    : center;
+    }
+  }
+}

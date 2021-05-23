@@ -1,0 +1,23 @@
+%font-poppins {
+  font-family: 'Poppins';
+}
+
+%font-barlow {
+  font-family: 'Barlow';
+}
+
+@mixin backgroundAfter($margin) {
+  content : '';
+  top     : $margin;
+  left    : $margin;
+  bottom  : $margin;
+  right   : $margin;
+  position: absolute;
+  z-index : -1;
+}
+
+@mixin backgroundImage($size) {
+  background-position: center;
+  background-repeat  : no-repeat;
+  background-size    : $size;
+}

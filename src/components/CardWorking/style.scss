@@ -1,0 +1,35 @@
+@import '../../scss/variant.scss';
+@import '../../scss/mixin.scss';
+
+.card-working {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  width          : 275px;
+
+  &>div {
+    display        : flex;
+    text-align     : center;
+    justify-content: center;
+  }
+
+  .card-working-icon {
+    font-size: 100px;
+  }
+
+  .card-working-title {
+    font-size: 28px;
+    @extend %font-barlow;
+  }
+
+  .card-working-description {
+    padding  : 5px;
+    font-size: 20px;
+    @extend %font-poppins;
+  }
+
+  @include mobile {
+    width  : 100%;
+    padding: 1rem;
+  }
+}

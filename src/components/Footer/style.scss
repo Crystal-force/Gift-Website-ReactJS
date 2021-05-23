@@ -1,0 +1,102 @@
+@import '../../scss/variant.scss';
+@import '../../scss/mixin.scss';
+
+.footer {
+  overflow: hidden;
+
+  .triangle {
+    width       : 0;
+    height      : 0;
+    border-style: solid;
+    border-width: 0 0 50px 100vw;
+    border-color: transparent transparent var(--panda-third-color) transparent;
+  }
+
+  .main {
+    background-color: var(--panda-third-color);
+    display         : flex;
+    padding         : 2rem;
+
+    &>div {
+      flex: 1;
+    }
+
+    .title {
+      @extend %font-poppins;
+      font-size  : 21px;
+      font-weight: 600;
+    }
+
+    .social-login {
+      .logo {
+        text-align: center;
+        padding   : 2rem;
+      }
+
+      .social-login-buttons {
+        display        : flex;
+        justify-content: center;
+
+        .social-login-button {
+          font-size: 45px;
+          margin   : 1rem;
+          color    : #2A4B6A;
+        }
+      }
+    }
+
+    .app-information {
+      display       : flex;
+      flex-direction: column;
+
+      ul {
+        list-style    : none;
+        display       : flex;
+        flex          : 1;
+        flex-direction: column;
+
+        li {
+          flex: 1;
+          @extend %font-poppins;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .play-store {
+      display       : flex;
+      flex-direction: column;
+
+      .store-buttons {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        flex           : 1;
+
+        .store-button {
+          width : 135px;
+          height: 42px;
+          margin: 1rem;
+          @include backgroundImage(contain);
+        }
+
+        .store-button.gp {
+          background-image: url('../../assets/images/gp.png');
+        }
+
+        .store-button.as {
+          background-image: url('../../assets/images/as.png');
+        }
+      }
+
+      .copyright {
+        @extend %font-poppins;
+        font-size: 15px;
+      }
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+}

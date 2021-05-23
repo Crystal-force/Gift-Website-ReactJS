@@ -1,0 +1,56 @@
+@import '../../scss/variant.scss';
+@import '../../scss/mixin.scss';
+
+.card-function {
+  display         : flex;
+  width           : 395px;
+  justify-content : flex-start;
+  background-color: var(--panda-third-color);
+  border-radius   : 9px;
+  box-shadow      : 0 3px 6px rgba(0, 0, 0, 0.13);
+  padding         : 1rem;
+  margin          : 1rem;
+
+  .card-function-icon {
+    padding  : 1rem;
+    flex     : 1;
+    font-size: 70px;
+  }
+
+  .card-function-contents {
+    flex: 3;
+
+    .card-function-title {
+      font-size: 28px;
+      @extend %font-barlow;
+    }
+
+    .card-function-description {
+      padding  : 5px;
+      font-size: 15px;
+      @extend %font-poppins;
+    }
+  }
+
+  @include mobile {
+    width         : 100%;
+    margin-top    : 2rem;
+    flex-direction: column;
+    width         : calc(100% - 2rem);
+    height        : fit-content;
+    margin        : 1rem;
+    align-items   : center;
+
+    .card-function-icon {
+      padding  : 1rem;
+      font-size: 85px;
+    }
+
+    .card-function-contents {
+      &>div {
+        text-align: center;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../scss/variant.scss';
+@import '../../scss/mixin.scss';
+
+header {
+  height          : 325px;
+  position        : relative;
+  background-color: rgba(9, 14, 58, 0.5);
+  display         : flex;
+  flex-direction  : column;
+
+  .background {
+    top     : 0;
+    left    : 0;
+    bottom  : 0;
+    right   : 0;
+    position: absolute;
+    z-index : -1;
+    @include backgroundImage(cover)
+  }
+
+  .title {
+    flex: 1;
+    @extend %font-poppins;
+    font-size      : 41px;
+    color          : white;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+    span {
+      color: var(--panda-secondary-main);
+    }
+  }
+
+  @include mobile {
+    height: 275px;
+
+    .title {
+      font-size: 30px;
+    }
+  }
+}

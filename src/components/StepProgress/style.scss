@@ -1,0 +1,61 @@
+@import '../../scss/variant.scss';
+@import '../../scss/mixin.scss';
+$defaultColor:#D1D2D2;
+
+.step-progress {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  padding        : 1rem;
+
+  .step-button {
+    width          : 78px;
+    height         : 78px;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    position       : relative;
+    border         : 4px solid $defaultColor;
+    border-radius  : 39px;
+    font-size      : 35px;
+    cursor         : pointer;
+
+    &::after {
+      @include backgroundAfter(0);
+      background-color: $defaultColor;
+      opacity         : 0.5;
+      border-radius   : 39px;
+    }
+
+    &.active {
+      border-color: var(--panda-primary-main);
+
+      &::after {
+        background-color: var(--panda-primary-main);
+      }
+    }
+  }
+
+  .connector {
+    height          : 3px;
+    width           : 100px;
+    background-color: $defaultColor;
+
+    &.active {
+      background-color: var(--panda-primary-main);
+    }
+  }
+
+  @include mobile {
+    margin: 1rem 0;
+
+    .step-button {
+      width : 50px;
+      height: 50px;
+    }
+
+    .connector {
+      flex: 1;
+    }
+  }
+}

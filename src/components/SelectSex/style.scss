@@ -1,0 +1,43 @@
+@import '../../scss/mixin.scss';
+
+.select-sex {
+  display        : flex;
+  justify-content: space-evenly;
+
+  .sex {
+    cursor     : pointer;
+    display    : flex;
+    align-items: center;
+
+    .icon {
+      width           : 58px;
+      height          : 58px;
+      border-radius   : 7px;
+      border          : 1px solid #eee;
+      display         : flex;
+      justify-content : center;
+      align-items     : center;
+      font-size       : 2rem;
+      background-color: var(--panda-third-color);
+      box-shadow      : 0 3px 6px rgba(0, 0, 0, 0.13);
+
+      &.selected {
+        background-color: var(--panda-primary-main);
+        color           : white;
+      }
+
+    }
+
+
+    .label {
+      font-size: 20px;
+      padding  : 1rem;
+    }
+  }
+
+  @include mobile {
+    .sex {
+      flex-direction: column;
+    }
+  }
+}

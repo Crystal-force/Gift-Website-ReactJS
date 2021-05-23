@@ -1,0 +1,7 @@
+@import '../../scss/variant.scss';
+
+.avatar {
+  cursor: pointer;
+  @include backgroundImage(cover);
+  border: 1px solid #d9d6d6;
+}
